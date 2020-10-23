@@ -16,6 +16,8 @@ systemctl enable nfs-kernel-server
 systemctl start nfs-kernel-server
 mount  -a
 
+mkdir -p /serv/swarm/{portainer,wp_db,wp_data}
+
 # configuració del Swarm
 
 docker swarm init
