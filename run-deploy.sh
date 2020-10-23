@@ -1,10 +1,16 @@
 #!/bin/bash
 
-IP1=$(getent hosts master01 | awk '{print $1}')
-IP2=$(getent hosts master02 | awk '{print $1}')
-IP3=$(getent hosts master03 | awk '{print $1}')
+#IP1=$(getent hosts master01 | awk '{print $1}')
+#IP2=$(getent hosts master02 | awk '{print $1}')
+#IP3=$(getent hosts master03 | awk '{print $1}')
+
+IP1=34.77.5.19
+IP2=34.77.123.11
+IP3=35.195.212.147
 
 export IP1 IP2 IP3
+
+mkdir -p /serv/swarm/{portainer,wp_db,wp_data}
 
 cd /srv/swarm/swarm-cluster-example
 
