@@ -12,8 +12,8 @@ echo '/srv/nfs 10.132.0.0/24(rw,no_root_squash,no_subtree_check)' >> /etc/export
 
 echo 'master01:/srv/nfs /srv/swarm nfs defaults,nfsver=3 0 0' >> /etc/fstab
 
-systemctl enable nfs-kenel-server
-systemctl start nfs-kenel-server
+systemctl enable nfs-kernel-server
+systemctl start nfs-kernel-server
 mount  -a
 
 # configuració del Swarm
