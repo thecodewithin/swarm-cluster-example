@@ -5,7 +5,7 @@ mkdir -p /srv/swarm
 
 # Configraciói NFS
 
-echo 'master01:/srv/nfs /srv/swarm nfs defaults,nfsver=3 0 0' >> /etc/fstab
+echo 'master01:/srv/nfs /srv/swarm nfs defaults,nfsvers=3 0 0' >> /etc/fstab
 
 apt install -y nfs-client
 
