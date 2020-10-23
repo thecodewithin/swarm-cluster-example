@@ -10,7 +10,7 @@ apt install -y nfs-kernel-server
 
 echo '/sev/nfs 10.132.0.0/24(rw,no_root_swash,no_subtree_check)' >> /etc/exports
 
-echo 'master01:/srv/nfs /srv/swarm nfs defaults,nfsver=3 0 0' >> etc/fstab
+echo 'master01:/srv/nfs /srv/swarm nfs defaults,nfsver=3 0 0' >> /etc/fstab
 
 systemctl restart nfs-kenel-server
 mount  -a
@@ -19,11 +19,11 @@ mount  -a
 
 docker swarm init
 docker swarm join-token manager | grep join > /srv/swarm/join.sh
-chmod 'x !$'
+chmod +x $!
 
 cd /srv/swarm
-git clone https://github.com/thecodewithin/swarm-cluster-example
+#git clone https://github.com/thecodewithin/swarm-cluster-example
 
-docker network crate proxy -d overlay
-docker network creat portainer_agent -d overlay
+docker network create proxy -d overlay
+docker network create portainer_agent -d overlay
 
