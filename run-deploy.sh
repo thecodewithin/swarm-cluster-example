@@ -8,7 +8,9 @@ IP1=34.77.5.19
 IP2=34.77.123.11
 IP3=35.195.212.147
 
-export IP1 IP2 IP3 
+export IP1 
+export IP2 
+export IP3 
 
 cd /srv/swarm/swarm-cluster-example
 
