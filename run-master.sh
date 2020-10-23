@@ -8,7 +8,7 @@ mkdir -p /srv/swarm
 
 apt install -y nfs-kernel-server
 
-echo '/srv/nfs 10.132.0.0/24(rw,no_root_swash,no_subtree_check)' >> /etc/exports
+echo '/srv/nfs 10.132.0.0/24(rw,no_root_squash,no_subtree_check)' >> /etc/exports
 
 echo 'master01:/srv/nfs /srv/swarm nfs defaults,nfsver=3 0 0' >> /etc/fstab
 
