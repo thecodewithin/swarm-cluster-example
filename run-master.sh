@@ -10,10 +10,11 @@ apt install -y nfs-kernel-server
 
 echo '/srv/nfs 10.132.0.0/24(rw,no_root_squash,no_subtree_check)' >> /etc/exports
 
-echo 'master01:/srv/nfs /srv/swarm nfs defaults,nfsver=3 0 0' >> /etc/fstab
-
 systemctl enable nfs-kernel-server
 systemctl start nfs-kernel-server
+
+echo 'master01:/srv/nfs /srv/swarm nfs defaults,nfsvers=3 0 0' >> /etc/fstab
+
 mount  -a
 
 mkdir -p /serv/swarm/{portainer,wp_db,wp_data}
@@ -29,4 +30,3 @@ git clone https://github.com/thecodewithin/swarm-cluster-example
 
 docker network create proxy -d overlay
 docker network create portainer_agent -d overlay
-
