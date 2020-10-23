@@ -33,20 +33,21 @@ services:
      deploy:
        labels:
          traefik.port: 80
-         traefik.frontend.rule: "Host:blog.34.77.5.19.nip.io,blog.35.195.212.147.nip.io,blog.34.77.228.172.nip.io"
         # traefik.frontend.rule: "Host:bloc..nip.io"
+         #traefik.frontend.rule: "Host:blog.34.77.5.19.nip.io,blog.35.195.212.147.nip.io,blog.34.77.228.172.nip.io"
+         traefik.frontend.rule: "Host:blog.${IP1}.nip.io,blog.${IP2}.nip.io,blog.${IP3}.nip.io"
          traefik.docker.network: "proxy"
 
 volumes:
     db_data: 
       driver_opts:
         type: "nfs"
-        o: "addr=10.132.0.2,nolock,soft,rw"
+        o: "addr=master01,nolock,soft,rw"
         device: ":/srv/nfs/wp_db"
     wp_data:
       driver_opts:
         type: "nfs"
-        o: "addr=10.132.0.2,nolock,soft,rw"
+        o: "addr=master01,nolock,soft,rw"
         device: ":/srv/nfs/wp_data"
 
 networks:
