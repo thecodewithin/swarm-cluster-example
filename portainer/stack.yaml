@@ -27,7 +27,8 @@ services:
       replicas: 1
       labels:
         traefik.port: 9000
-        traefik.frontend.rule: "Host:portainer.34.77.5.19.nip.io,portainer.35.195.212.147.nip.io,portainer.34.77.228.172.nip.io"
+        #traefik.frontend.rule: "Host:portainer.34.77.5.19.nip.io,portainer.35.195.212.147.nip.io,portainer.34.77.228.172.nip.io"
+        traefik.frontend.rule: "Host:portainer.${IP1}.nip.io,portainer.${IP2}.nip.io,portainer.${IP3}.nip.io"
         traefik.docker.network: 'proxy'
       placement:
         constraints: [node.role == manager]
@@ -54,7 +55,7 @@ volumes:
   portainer:
     driver_opts:
       type: "nfs"
-      o: "addr=10.132.0.2,nolock,soft,rw"
+      o: "addr=master01,nolock,soft,rw"
       device: ":/srv/nfs/portainer"
 
 networks:
