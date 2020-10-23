@@ -10,4 +10,4 @@ cd /srv/swarm/swarm-cluster-example
 
 docker stack deploy -c traefik/stack.yaml traefik
 docker stack deploy -c portainer/stack.yaml portainer
-docker stack deploy -c my-wordpress/stack.yaml my-wordpress
+docker stack deploy -c my-wordpress/stack.yml my-wordpress
