@@ -10,8 +10,6 @@ IP3=35.195.212.147
 
 export IP1 IP2 IP3
 
-mkdir -p /serv/swarm/{portainer,wp_db,wp_data}
-
 cd /srv/swarm/swarm-cluster-example
 
 docker stack deploy -c traefik/stack.yaml traefik
