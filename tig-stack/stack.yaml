@@ -57,7 +57,7 @@ services:
       - /proc:/rootfs/proc:ro
       - /run:/rootfs/run:ro
       - /etc:/rootfs/etc:ro
-      - /srv/swarm/influxdb_config:/etc/telegraf/ 
+      - telegraf_config:/etc/telegraf/ 
     depends_on:
       - influxdb
     deploy:
@@ -67,6 +67,11 @@ services:
         delay: 5s
 
 volumes:
+  telegraf_config:
+    driver_opts:
+      type: "nfs"
+      o: "addr=master01,nolock,soft,rw"
+      device: ":/srv/nfs/telegraf_config"
   influxdb_data:
     driver_opts:
       type: "nfs"
