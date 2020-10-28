@@ -17,4 +17,5 @@ cd /srv/swarm/swarm-cluster-example
 docker stack deploy -c traefik/stack.yaml traefik
 docker stack deploy -c portainer/stack.yaml portainer
 docker stack deploy -c my-wordpress/stack.yml my-wordpress
-docker stack deploy -c logspout-elk/stack.yml logspout-elk
+docker stack deploy -c logspout-elk/stack.yaml logspout-elk
+docker stack deploy -c tig-stack/stack.yaml tig

@@ -1,6 +1,9 @@
 apt install -y git
 curl https://get.docker.com | sudo bash
 
+# Use valid user
+#sudo usermod -G docker $USER
+
 mkdir -m 1777 /srv/nfs
 mkdir -p /srv/swarm
 
