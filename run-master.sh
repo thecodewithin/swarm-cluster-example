@@ -17,7 +17,7 @@ echo 'master01:/srv/nfs /srv/swarm nfs defaults,nfsvers=3 0 0' >> /etc/fstab
 
 mount  -a
 
-mkdir -p /serv/swarm/{portainer,wp_db,wp_data}
+mkdir -p /srv/swarm/{portainer,wp_db,wp_data}
 
 # configuració del Swarm
 
