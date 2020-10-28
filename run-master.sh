@@ -11,7 +11,7 @@ apt install -y nfs-kernel-server
 echo '/srv/nfs 10.132.0.0/24(rw,no_root_squash,no_subtree_check)' >> /etc/exports
 
 systemctl enable nfs-kernel-server
-systemctl start nfs-kernel-server
+systemctl restart nfs-kernel-server
 
 echo 'master01:/srv/nfs /srv/swarm nfs defaults,nfsvers=3 0 0' >> /etc/fstab
 
@@ -23,6 +23,7 @@ mkdir -p /srv/swarm/{portainer,wp_db,wp_data}
 
 docker swarm init
 docker swarm join-token manager | grep join > /srv/swarm/join.sh
+#chmod +x !$
 chmod +x /srv/swarm/join.sh
 
 cd /srv/swarm
