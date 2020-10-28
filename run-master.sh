@@ -23,6 +23,7 @@ mkdir -p /srv/swarm/{portainer,wp_db,wp_data}
 
 docker swarm init
 docker swarm join-token manager | grep join > /srv/swarm/join.sh
+#chmod +x !$
 chmod +x /srv/swarm/join.sh
 
 cd /srv/swarm
