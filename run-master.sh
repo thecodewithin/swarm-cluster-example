@@ -11,7 +11,7 @@ apt install -y nfs-kernel-server
 echo '/srv/nfs 10.132.0.0/24(rw,no_root_squash,no_subtree_check)' >> /etc/exports
 
 systemctl enable nfs-kernel-server
-systemctl start nfs-kernel-server
+systemctl restart nfs-kernel-server
 
 echo 'master01:/srv/nfs /srv/swarm nfs defaults,nfsvers=3 0 0' >> /etc/fstab
 
