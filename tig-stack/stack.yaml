@@ -43,7 +43,8 @@ services:
 #   Fancy replacing placement on a static node. Add Net-storage and drop this out
 
   telegraf:
-    image: kpeiruza/telegraf
+    image: telegraf:latest
+    hostname: "{{.Node.Hostname}}"
     environment:
       HOST_PROC: '/rootfs/proc'
       HOST_SYS: '/rootfs/sys'
@@ -56,7 +57,7 @@ services:
       - /proc:/rootfs/proc:ro
       - /run:/rootfs/run:ro
       - /etc:/rootfs/etc:ro
-      - /etc/telegraf/:/etc/telegraf/ 
+      - /srv/swarm/influxdb_config:/etc/telegraf/ 
     depends_on:
       - influxdb
     deploy:
