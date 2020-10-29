@@ -32,5 +32,9 @@ chmod +x /srv/swarm/join.sh
 cd /srv/swarm
 git clone https://github.com/thecodewithin/swarm-cluster-example
 
+cp swarm-cluster-example/tig-stack/files/influxdb.conf /srv/swarm/influxdb_config
+cp swarm-cluster-example/tig-stack/files/telegraf.conf /srv/swarm/telegraf_config
+cp swarm-cluster-example/logspout-elk/files/logstash.conf /srv/swarm/logstash_pipeline
+
 docker network create proxy -d overlay
 docker network create portainer_agent -d overlay
