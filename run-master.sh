@@ -7,6 +7,8 @@ curl https://get.docker.com | sudo bash
 mkdir -m 1777 /srv/nfs
 mkdir -p /srv/swarm
 
+echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+
 # Configraciói NFS
 
 apt install -y nfs-kernel-server

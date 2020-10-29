@@ -1,6 +1,8 @@
 apt install -y git bash-completion
 curl https://get.docker.com | sudo bash
 
+echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+
 mkdir -p /srv/swarm
 
 # Configraciói NFS
@@ -14,3 +16,4 @@ mount  -a
 # configuració del Swarm
 
 /srv/swarm/join.sh
+vm.max_map_count=262144
