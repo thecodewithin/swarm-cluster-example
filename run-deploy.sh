@@ -4,9 +4,9 @@
 #IP2=$(getent hosts master02 | awk '{print $1}')
 #IP3=$(getent hosts master03 | awk '{print $1}')
 
-IP1=35.195.175.232
-IP2=34.76.252.233
-IP3=35.187.160.144
+IP1=104.199.32.151
+IP2=34.77.29.102
+IP3=34.78.220.147
 
 export IP1 
 export IP2 

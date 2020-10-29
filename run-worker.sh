@@ -1,4 +1,4 @@
-apt install -y git
+apt install -y git bash-completion
 curl https://get.docker.com | sudo bash
 
 mkdir -p /srv/swarm
