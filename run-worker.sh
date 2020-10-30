@@ -1,3 +1,6 @@
+
+hostnamectl set-hostname `hostnamectl | grep "Transient hostname" | awk -F":" '{print $2}'`
+
 apt install -y git bash-completion
 curl https://get.docker.com | sudo bash
 
